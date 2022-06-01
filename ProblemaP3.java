@@ -41,7 +41,7 @@ public class ProblemaP3 {
             if(i == charCount) {
                 stack.push(encryption.charAt(encryption.length()-1) + "");
             } else {
-                for(int j = encryption.length()-1; j > 0 ; j--) {
+                for(int j = encryption.length()-1; j >= 0 ; j--) {
                     String current = encryption.substring(j, j+1);
                     if(!stack.contains(current)) {
                         stack.push(current);
@@ -72,7 +72,7 @@ public class ProblemaP3 {
             
             String checkEncryp = removedStr.replaceAll(stack.peek(), ""); 
             
-            // System.out.println("encryptionSubtr: " + encryption + " removed: " + removedStr + " check: " + checkEncryp + " stack-top: " + stack.peek());
+            // System.out.println("encryptionSubtr: " + encryption + " removed: " + removedStr + " check: " + checkEncryp + " prevSubstr: " + prevSubsStr +" stack-top: " + stack.peek());
             
             if(!checkEncryp.equals(prevSubsStr)) {
                 System.out.println("NO EXISTE"); 
