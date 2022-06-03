@@ -46,15 +46,24 @@ public class Encrypter {
         }
 
         //! P3.in
+        // * Casos Correctos
         P3in.println(t);
-        // System.out.println(t);
+
+        // * Casos Incorrectos
+        // P3in.println(t.substring(0, t.length()/2)  + "x"  + t.substring(t.length()/2, t.length()));
+
+
         //! P3.out
+        // * Casos Correctos
         String removedOrderStr = "";
         for(String s: removedOrder) {
             removedOrderStr = removedOrderStr.concat(s);
         }
         P3out.println(ogPassword + " " + removedOrderStr);
-        // System.out.println(ogPassword + " " + removedOrder);
+
+        // * Casos Incorrectos
+        // P3out.println("NO EXISTE"); 
+
 
     }
     public static void main(String[] args) throws IOException {

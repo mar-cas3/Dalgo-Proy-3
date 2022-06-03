@@ -1,7 +1,10 @@
+/* *
+ * Maria Castro Iregui - 202020850 
+ * Sergio Arango Arango - 201921814
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -35,23 +38,23 @@ public class ProblemaP3 {
         // System.out.println(appears);
 
         Stack<String> stack = new Stack<>();
+        HashMap<String, Integer> stackAppears = new HashMap<>();
         String prevSubsStr = "";
         for(int i = charCount; i > 0; i--) {
 
             if(i == charCount) {
                 stack.push(encryption.charAt(encryption.length()-1) + "");
+                stackAppears.put(encryption.charAt(encryption.length()-1) + "", 1);
             } else {
                 for(int j = encryption.length()-1; j >= 0 ; j--) {
                     String current = encryption.substring(j, j+1);
-                    if(!stack.contains(current)) {
+                    if(!stackAppears.containsKey(current)) {
                         stack.push(current);
+                        stackAppears.put(current, 1);
                         break;
                     }
                 }
-            }
-
-            
-            
+            }            
             
             // System.out.println(stack.toString() + " iter: " + i);
             int lettersToRemove = 0; 
